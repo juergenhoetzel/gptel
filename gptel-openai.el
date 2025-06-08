@@ -141,11 +141,6 @@ Throw an error if there is no match."
       (user-error "Backend %s is not known to be defined"
                   name)))
 
-(gv-define-setter gptel-get-backend (val name)
-  `(setf (alist-get ,name gptel--known-backends
-          nil t #'equal)
-    ,val))
-
 (cl-defstruct
     (gptel-backend (:constructor gptel--make-backend)
                    (:copier gptel--copy-backend))
